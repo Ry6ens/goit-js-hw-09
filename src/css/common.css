@@ -17,6 +17,11 @@ img {
   max-width: 100%;
 }
 
+.text-input {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .timer {
   display: flex;
   font-size: 48px;

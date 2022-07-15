@@ -1,8 +1,7 @@
-// Описан в документации
 import flatpickr from 'flatpickr';
-// Дополнительный импорт стилей
 import 'flatpickr/dist/themes/confetti.css';
 // import 'flatpickr/dist/flatpickr.min.css';
+import Notiflix from 'notiflix';
 
 const startBtn = document.querySelector('[data-start]');
 
@@ -13,7 +12,9 @@ const timerDeadline = flatpickr('#datetime-picker', {
   minuteIncrement: 1,
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
-      return window.alert('Please choose a date in the future');
+      return Notiflix.Notify.failure('Please choose a date in the future', {
+        width: '460px',
+      });
     }
     startBtn.disabled = false;
   },
